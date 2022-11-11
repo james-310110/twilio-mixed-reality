@@ -43,6 +43,22 @@ If you want to use `yarn` to install dependencies, first run the [yarn import](h
 
 ### Install the Twilio CLI
 
+Resolve M1 Mac Environment:
+
+    brew install chromium
+
+    vim ~/.zshrc
+
+Add the following to your zshrc and :x to save
+
+    export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+    export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+
+Then run the below command:
+
+    source ~/.zshrc
+    npm install --save-dev cross-env
+
 The app is deployed to Twilio using the Twilio CLI. You can [install the Twilio CLI using Homebrew on a Mac or npm](https://www.twilio.com/docs/twilio-cli/quickstart).
 
 To install twilio-cli using npm, run the following command:
