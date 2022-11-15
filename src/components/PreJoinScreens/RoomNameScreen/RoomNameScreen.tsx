@@ -40,7 +40,7 @@ export default function RoomNameScreen({ name, roomName, setName, setRoomName, h
   const { user } = useAppState();
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
+    // setName(event.target.value);
   };
 
   const handleRoomNameChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -49,6 +49,7 @@ export default function RoomNameScreen({ name, roomName, setName, setRoomName, h
 
   const hasUsername = !window.location.search.includes('customIdentity=true') && user?.displayName;
 
+  setRoomName('mixedrealitywindow');
   return (
     <>
       <Typography variant="h5" className={classes.gutterBottom}>
@@ -60,6 +61,9 @@ export default function RoomNameScreen({ name, roomName, setName, setRoomName, h
           : "Enter your name and the name of a room you'd like to join"}
       </Typography>
       <form onSubmit={handleSubmit}>
+        <Button onClick={() => setName('guest')}>Guest</Button>
+        <Button onClick={() => setName('windowFront')}>windowFront</Button>
+        <Button onClick={() => setName('windowBack')}>windowBack</Button>
         <div className={classes.inputContainer}>
           {!hasUsername && (
             <div className={classes.textFieldContainer}>
